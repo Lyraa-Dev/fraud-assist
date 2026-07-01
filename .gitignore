@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.env
+.ipynb_checkpoints/
+data/*.db
+data/*.sqlite
+models/*.pkl
+faiss_index/

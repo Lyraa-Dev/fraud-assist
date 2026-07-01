@@ -1,0 +1,12 @@
+database:
+  path: data/fraud_assist.db
+data_generation:
+  n_clientes: 50
+  n_transacoes: 2000
+  taxa_fraude: 0.03
+  seed: 42
+llm:
+  provider: ollama
+  model: llama3.1
+fraud_model:
+  path: models/fraud_model.pkl
