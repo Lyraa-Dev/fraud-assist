@@ -38,8 +38,8 @@ Usuário (linguagem natural, PT-BR)
 | Fase | Entrega | Status |
 |------|---------|--------|
 | 0 | Estrutura e configuração | ✅ |
-| 1 | Camada de dados (SQLite + transações sintéticas) | 🚧 |
-| 2 | Ferramentas transacionais + testes | ⬜ |
+| 1 | Camada de dados (SQLite + transações sintéticas) | ✅ |
+| 2 | Ferramentas transacionais + testes | ✅ |
 | 3 | Orquestração via tool calling | ⬜ |
 | 4 | RAG sobre regras de negócio | ⬜ |
 | 5 | Interface Streamlit | ⬜ |
