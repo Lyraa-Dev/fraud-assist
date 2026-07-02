@@ -89,4 +89,28 @@ TOOL_SCHEMAS = [
             },
         },
     },
+    {
+        "type": "function",
+        "function": {
+            "name": "consultar_regras",
+            "description": (
+                "Consulta as regras e políticas do banco sobre prevenção a "
+                "fraudes, bloqueios, contestações, prazos, limites e compras "
+                "internacionais. Use quando o usuário pergunta COMO algo "
+                "funciona, POR QUE existe uma regra, QUAL o prazo/limite, ou "
+                "qualquer dúvida sobre política — e não sobre uma transação "
+                "específica dele."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pergunta": {
+                        "type": "string",
+                        "description": "A dúvida do cliente sobre regras ou políticas.",
+                    }
+                },
+                "required": ["pergunta"],
+            },
+        },
+    },
 ]

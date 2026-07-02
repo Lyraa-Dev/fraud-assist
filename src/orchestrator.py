@@ -8,6 +8,7 @@ from src.tools.fraud_tools import (
     explicar_transacao,
     abrir_contestacao,
 )
+from src.rag import buscar_regras
 
 MODELO = "llama3.1"
 
@@ -38,6 +39,9 @@ def _mapa_ferramentas(cliente_id: int, db_path: str):
             transacao_id, db_path),
         "abrir_contestacao": lambda transacao_id, motivo: abrir_contestacao(
             transacao_id, cliente_id, motivo, db_path),
+        "consultar_regras": lambda pergunta: {
+            "regras_encontradas": buscar_regras(pergunta)
+        },
     }
 
 
