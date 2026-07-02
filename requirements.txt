@@ -3,6 +3,8 @@ pandas>=2.0
 numpy>=1.24
 # LLM / orquestração
 ollama>=0.3
+groq>=0.11
+python-dotenv>=1.0
 langchain>=0.2
 langchain-community>=0.2
 # RAG
