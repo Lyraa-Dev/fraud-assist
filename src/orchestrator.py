@@ -11,6 +11,7 @@ from src.tools.fraud_tools import (
     abrir_contestacao,
 )
 from src.rag import buscar_regras
+from src.guardrails import checar_mensagem
 
 # carrega o .env e cria o cliente Groq uma vez (reutilizado em todas as chamadas)
 load_dotenv()
@@ -58,6 +59,12 @@ def _mapa_ferramentas(cliente_id: int, db_path: str):
 def conversar(mensagem: str, historico: list, cliente_id: int,
               db_path: str = "data/fraud_assist.db") -> tuple[str, list]:
     """Processa uma mensagem do usuário e devolve (resposta, historico_novo)."""
+
+    checagem = checar_mensagem(mensagem)
+    if not checagem["ok"]:
+        return checagem["motivo"], historico
+
+    ferramentas = _mapa_ferramentas(cliente_id, db_path)
     ferramentas = _mapa_ferramentas(cliente_id, db_path)
 
     mensagens = list(historico)
