@@ -1,0 +1,200 @@
+{
+  "acuracia_media": 0.9461988304093567,
+  "desvio_padrao": 0.05413701432062278,
+  "acuracia_min": 0.8888888888888888,
+  "acuracia_max": 1.0,
+  "n_rodadas": 5,
+  "rodadas": [
+    {
+      "rodada": 1,
+      "acuracia": 1.0,
+      "acertos": 17,
+      "total": 20
+    },
+    {
+      "rodada": 2,
+      "acuracia": 1.0,
+      "acertos": 20,
+      "total": 20
+    },
+    {
+      "rodada": 3,
+      "acuracia": 0.9473684210526315,
+      "acertos": 18,
+      "total": 20
+    },
+    {
+      "rodada": 4,
+      "acuracia": 0.8947368421052632,
+      "acertos": 17,
+      "total": 20
+    },
+    {
+      "rodada": 5,
+      "acuracia": 0.8888888888888888,
+      "acertos": 16,
+      "total": 20
+    }
+  ],
+  "acuracia": 0.8947368421052632,
+  "total": 20,
+  "avaliados": 19,
+  "acertos": 17,
+  "erros_api": 1,
+  "detalhes": [
+    {
+      "pergunta": "Quais foram minhas últimas transações?",
+      "esperado": "consultar_transacoes",
+      "obtido": "consultar_transacoes",
+      "acertou": true
+    },
+    {
+      "pergunta": "Me mostra meu extrato",
+      "esperado": "consultar_transacoes",
+      "obtido": "ERRO_API: Error code: 400 - {'error': {'message': 'tool call validation failed: parameters for tool consultar_transacoes did not match schema: errors: [`/limite`: expected integer, but got string]', 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=consultar_transacoes>{\"cliente_id\": \"1234567890\", \"limite\": \"20\"}</function>'}}",
+      "acertou": null
+    },
+    {
+      "pergunta": "Quanto eu gastei recentemente?",
+      "esperado": "consultar_transacoes",
+      "obtido": "consultar_transacoes",
+      "acertou": true
+    },
+    {
+      "pergunta": "Quero ver minhas compras",
+      "esperado": "consultar_transacoes",
+      "obtido": null,
+      "acertou": false
+    },
+    {
+      "pergunta": "Lista as transações da minha conta",
+      "esperado": "consultar_transacoes",
+      "obtido": "consultar_transacoes",
+      "acertou": true
+    },
+    {
+      "pergunta": "A transação 2916 é suspeita?",
+      "esperado": "score_fraude",
+      "obtido": "score_fraude",
+      "acertou": true
+    },
+    {
+      "pergunta": "Qual o risco de fraude da compra 2190?",
+      "esperado": "score_fraude",
+      "obtido": "score_fraude",
+      "acertou": true
+    },
+    {
+      "pergunta": "A transação de ID 3683 é arriscada?",
+      "esperado": "score_fraude",
+      "obtido": "score_fraude",
+      "acertou": true
+    },
+    {
+      "pergunta": "Por que a transação 2916 foi bloqueada?",
+      "esperado": "explicar_transacao",
+      "obtido": "explicar_transacao",
+      "acertou": true
+    },
+    {
+      "pergunta": "Me explica por que a compra 2190 parece estranha",
+      "esperado": "explicar_transacao",
+      "obtido": "explicar_transacao",
+      "acertou": true
+    },
+    {
+      "pergunta": "O que houve com a transação 2916?",
+      "esperado": "explicar_transacao",
+      "obtido": "explicar_transacao",
+      "acertou": true
+    },
+    {
+      "pergunta": "Quero contestar a transação 2190, não reconheço essa compra",
+      "esperado": "abrir_contestacao",
+      "obtido": null,
+      "acertou": false
+    },
+    {
+      "pergunta": "Não fiz a compra 2916, quero abrir uma reclamação",
+      "esperado": "abrir_contestacao",
+      "obtido": "abrir_contestacao",
+      "acertou": true
+    },
+    {
+      "pergunta": "Contestar a cobrança indevida da transação 2401",
+      "esperado": "abrir_contestacao",
+      "obtido": "abrir_contestacao",
+      "acertou": true
+    },
+    {
+      "pergunta": "Qual o prazo para contestar uma compra?",
+      "esperado": "consultar_regras",
+      "obtido": "consultar_regras",
+      "acertou": true
+    },
+    {
+      "pergunta": "Como funciona o bloqueio de transações?",
+      "esperado": "consultar_regras",
+      "obtido": "consultar_regras",
+      "acertou": true
+    },
+    {
+      "pergunta": "Por que uma compra é considerada fraude?",
+      "esperado": "consultar_regras",
+      "obtido": "consultar_regras",
+      "acertou": true
+    },
+    {
+      "pergunta": "Qual o limite para compras internacionais?",
+      "esperado": "consultar_regras",
+      "obtido": "consultar_regras",
+      "acertou": true
+    },
+    {
+      "pergunta": "Olá, tudo bem?",
+      "esperado": null,
+      "obtido": null,
+      "acertou": true
+    },
+    {
+      "pergunta": "Obrigado pela ajuda!",
+      "esperado": null,
+      "obtido": null,
+      "acertou": true
+    }
+  ],
+  "por_ferramenta": {
+    "consultar_transacoes": {
+      "total": 4,
+      "acertos": 3,
+      "acuracia": 0.75
+    },
+    "score_fraude": {
+      "total": 3,
+      "acertos": 3,
+      "acuracia": 1.0
+    },
+    "explicar_transacao": {
+      "total": 3,
+      "acertos": 3,
+      "acuracia": 1.0
+    },
+    "abrir_contestacao": {
+      "total": 3,
+      "acertos": 2,
+      "acuracia": 0.6666666666666666
+    },
+    "consultar_regras": {
+      "total": 4,
+      "acertos": 4,
+      "acuracia": 1.0
+    },
+    "nenhuma": {
+      "total": 2,
+      "acertos": 2,
+      "acuracia": 1.0
+    }
+  },
+  "modelo": "llama-3.1-8b-instant",
+  "data_avaliacao": "2026-07-03T02:19:34"
+}
